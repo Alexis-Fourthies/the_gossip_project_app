@@ -8,6 +8,14 @@
 
 require 'faker'
 
+City.destroy_all
+User.destroy_all
+Gossip.destroy_all
+Tag.destroy_all
+PrivateMessage.destroy_all
+Comment.destroy_all
+Like.destroy_all
+
 10 .times do
     city = City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
     end
@@ -25,7 +33,7 @@ require 'faker'
     end
 
     3.times do
-        private_message = PrivateMessage.create(content: Faker::Lorem.sentence, sender: User.all.sample, recipient: User.all.sample)
+        private_message = PrivateMessage.create(content: Faker::Lorem.sentence, sender: User.all.sample)
     end
 
     20.times do
